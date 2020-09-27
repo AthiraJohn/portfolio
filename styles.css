@@ -1,0 +1,412 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+
+
+.bd-grid{
+    max-width: 1024px;
+    display: grid;
+    grid-template-columns: 100%;
+    column-gap: 2rem;
+    width: calc(100% - 2rem);
+    margin-left: var(--mb-2);
+    margin-right: var(--mb-2);
+}
+
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding: 15px 0;
+    background: cornflowerblue;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.3s ease;
+}
+.navbar.sticky{
+    padding: 15px 0;
+    background: crimson;
+}
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a{
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+}
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+.navbar .menu li a{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+.navbar .menu li a:hover{
+    color: crimson;
+}
+.navbar.sticky .menu li a:hover{
+    color: #fff;
+}
+.home{
+    display: flex;
+    background: url("images/photo1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    min-height: 50px;
+    font-family: 'Ubuntu', sans-serif;
+    overflow-x: hidden;
+}
+.home .max-width{
+    margin: auto 0 auto 40px;
+}
+.home .home-content .text-1{
+    font-size: 20px;
+}
+.home .home-content .text-2{
+    font-size: 30px;
+    font-weight: 600;
+    margin-left: -3px;
+    color: crimson;
+}
+.home .home-content .text-3{
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+.home .home-content .home_social-link{
+    margin-bottom: 5rem;
+}
+.home .home-content .home_social-link{
+    display: inline-flex;
+    background-color: crimson;
+    color: #fff;
+    font-size: 1.1rem;
+    border-radius: 50%;
+    padding: .20rem;
+    margin: var(--mb-1);
+}
+
+.home .home-content .home_social-link:hover{
+    background-color: var(--first-color-dark);
+}
+
+@media screen and (max-width: 770px){
+    .nav__menu{
+        position: fixed;
+        top: var(--header-height);
+        right: 0;
+        width: 80%;
+        height: 100%;
+        padding: 2rem;
+        background-color: darkgreen;
+        transition: .5s;
+    }
+}
+
+
+section{
+    padding: 100px 0;
+}
+
+.about, .goals, .academics, .skills, .projects, .experience{
+    font-family: 'Poppins', sans-serif;
+}
+section .title{
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-family: 'Ubuntu',sans-serif;
+}
+section .title::before{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: #111;
+    transform: translateX(-50%);
+}
+section .title::after{
+    color: crimson;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    font-size: 20px;
+    padding: 5px;
+    background: #fff;
+    transform: translateX(-50%);
+}
+.about .title::after{
+    content: "who i am";
+}
+.about .about-content,
+.goals .goals-content,
+.projects .projects-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.about .about-content .left{
+    width: 45%;
+}
+.about .about-content .left img{
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.about .about-content .right{
+    width: 55%;
+}
+.about .about-content .right .text{
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.about .about-content .right p{
+    text-align: justify;
+}
+.about .about-content .column{
+    width: 50%;
+} 
+
+.goals{
+    color: #111;
+    background: burlywood;
+}
+.goals .goals-content{
+    color: #111;
+}
+
+.goals .title::before{
+    background: #fff;
+}
+
+.goals .title::after{
+    content: "my ambitions";
+}
+
+
+.academics .title::after{
+    content: "qualification";
+}
+
+.academics-container{
+    row-gap: 2rem;
+
+}
+.academics-content{
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+}
+.academics-year, .academics-institute{
+    font-size: var(--h3-font-size);
+    margin-bottom: .25rem;
+}
+
+.academics-university, .academics-specialty{
+    display: block;
+    font-size: var(--smaller-font-size);
+}
+
+.academics-year, .academics-university{
+    text-align: right;
+}
+
+.academics-time{
+    padding: 0 1rem;
+    justify-self: center;
+}
+
+.academics-rounder{
+    position: relative;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: blueviolet;
+    border-radius: 50%;
+}
+
+.academics-rounder::before{
+    content: '';
+    position: absolute;
+    transform: translate(-4px, -4px);
+    width: 20px;
+    height: 20px;
+    border: 1px solid blueviolet;
+    border-radius: 50%;
+}
+
+.academics-line{
+    display: block;
+    height: 90%;
+    width: 2px;
+    background-color: blueviolet;
+    transform: translate(5px, -4px);
+}
+
+.skills{
+    background-color: burlywood;
+}
+
+.skills .title::after{
+    content: "my expertise area";
+}
+
+.skills-container{
+    row-gap: 2rem;
+}
+
+.skills-subtitle{
+    font-size: var(--h3-font-size);
+    color: blueviolet;
+    margin-bottom: var(--mb-2);
+}
+
+.skills-data{
+    position: relative;
+    display: -ms-flexbox;
+    justify-content: space-between;
+    margin: 0 var(--mb-2);
+    margin-bottom: var(--mb-4);
+}
+
+.skills-name{
+    text-transform: uppercase;
+}
+
+.skills-bar{
+    position: absolute;
+    bottom: -0.75rem;
+    height: 0.25rem;
+    background-color: blueviolet;
+}
+
+.projects .title::after{
+    content: "recent projects";
+}
+
+.projects .projects-content .left{
+    width: 45%;
+}
+
+.projects .projects-content .left img{
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.projects .projects-content .right{
+    width: 55%;
+}
+.projects .projects-content .right .text{
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.projects .projects-content .right p{
+    text-align: justify;
+}
+.projects .projects-content .column{
+    width: 50%;
+} 
+
+.experience{
+    background-color: burlywood;
+}
+
+
+.contact-container{
+    row-gap: 3rem;
+}
+
+.contact-input{
+    width: 100%;
+    padding: 1rem;
+    outline: none;
+    border: none;
+    background-color: wheat;
+    font-size: var(--normal-font-size);
+    margin-bottom: var(--mb-2);
+    border-radius: .5rem;
+}
+
+.contact ::placeholder{
+    color: teal;
+    font-family: var(--body-font);
+    font-weight: var(--font-medium);
+}
+
+.contact-button{
+    outline: none;
+    border: none;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    cursor: pointer;
+}
+
+.contact-info{
+    margin-bottom: var(--mb-3);
+
+}
+
+.contact-subtitle{
+    font-size: var(--h3-font-size);
+    color: #111;
+    margin-bottom: var(--mb-1);
+}
+
+.contact-text{
+    display: block;
+    padding-left: 1rem;
+}
+
+
+.footer{
+    background-color: crimson;
+    color:#fff;
+    text-align: center;
+}
+
+.footer-title{
+    font-size: var(--h1-font-size);
+    margin-bottom: var(--mb-2);
+}
+
+.footer-description{
+    margin-bottom: var(--mb-2);
+}
+
+
+@media (max-width: 1300px){
+    .home .max-width{
+        margin-left: 0px;
+    }
+}
+@media (max-width: 1104px){
+    .about .about-content .left img{
+        height: 350px;
+        width: 350px;
+    }
+}
